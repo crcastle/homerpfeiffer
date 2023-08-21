@@ -39,7 +39,7 @@ getSheetData(sheetUrl, (results: any) => {
     try {
       const fileUrl = new URL(row['Download link']);
       const fileId = fileUrl.searchParams.get('id');
-      imgSrc = `https://drive.google.com/thumbnail?sz=w460&id=${fileId}`;
+      imgSrc = `https://res.cloudinary.com/dhak0xfzi/image/upload/t_w620/siggie/${fileId}`
     } catch (e) {
       console.info(e);
     }
