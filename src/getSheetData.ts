@@ -1,9 +1,9 @@
 import Papa from 'papaparse';
 
 export function getSheetData(url: string, complete: Function): void {
-  Papa.parse(url, {
+  Papa.parse(url as any, {
     download: true,
     header: true,
-    complete: complete
-  })
+    complete: complete,
+  } as any)
 }
