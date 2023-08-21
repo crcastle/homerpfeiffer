@@ -1,0 +1,35 @@
+/* basic reset */
+* {
+    margin: 0
+}
+
+/* masonry grid styles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(20em, 100%));
+    grid-template-rows: masonry;
+    justify-content: center;
+    grid-gap: 0.5em;
+    padding: 0.5em;
+
+    >* {
+        align-self: start
+    }
+}
+
+a {
+    margin: auto 0;
+}
+
+/* prettifying styles */
+html {
+    background: #b3a69388;
+}
+
+img {
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .7);
+}
