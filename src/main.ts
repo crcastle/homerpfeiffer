@@ -1,16 +1,16 @@
 /**
  * TODO:
- * - skip spreadsheet rows without a URL
- * - click to view large version
- * - add header that says Homer Pfeiffer
- * - deploy to github pages
- * - purchase homerpfeiffer.com (homerpfeiffer.art, siggie.art, siggi.art)
- * - add spinner while loading spreadsheet data?
- * - add About modal?
+ * - [ ] skip spreadsheet rows without a URL
+ * - [x] click to view large version
+ * - [ ] add header that says Homer Pfeiffer
+ * - [x] deploy to github pages
+ * - [ ] purchase homerpfeiffer.com
+ * - [ ] add spinner while loading spreadsheet data?
  */
 
 
 import lozad from 'lozad';
+import Tobii from '@midzer/tobii';
 
 import './style.css'
 import { getSheetData } from './getSheetData.ts'
@@ -36,9 +36,10 @@ getSheetData(sheetUrl, (results: any) => {
 
   for (const row of results.data) {
     let imgSrc;
+    let fileId;
     try {
       const fileUrl = new URL(row['Download link']);
-      const fileId = fileUrl.searchParams.get('id');
+      fileId = fileUrl.searchParams.get('id');
       imgSrc = `https://res.cloudinary.com/dhak0xfzi/image/upload/t_w620/siggie/${fileId}`
     } catch (e) {
       console.info(e);
@@ -51,10 +52,20 @@ getSheetData(sheetUrl, (results: any) => {
     img.classList.add('item');
 
     const a = document.createElement('a');
+    a.classList.add('lightbox');
+    a.setAttribute('href', `https://res.cloudinary.com/dhak0xfzi/image/upload/siggie/${fileId}`);
     a.appendChild(img);
 
     section?.appendChild(a);
 
+
     observer.observe();
   }
+
+  //@ts-ignore
+  const tobii = new Tobii({
+    zoom: false,
+    counter: false,
+    close: false
+  });
 });
