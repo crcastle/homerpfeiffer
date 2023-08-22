@@ -19,7 +19,7 @@ import { getSheetData } from './getSheetData.ts'
 let start: number;
 let end: number;
 
-const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRg2kDl78liNmZXI_GUqhWVCDfndPc6719uCwdI_S0wm3O4d9Vzs5peFd2bXbtmzxs6BX2c4F1Dz4qe/pub?gid=0&single=true&output=csv';
+const sheetUrl = spreadsheetUrl;
 
 start = performance.now();
 
