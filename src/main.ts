@@ -2,7 +2,7 @@
  * TODO:
  * - [ ] skip spreadsheet rows without a URL
  * - [x] click to view large version
- * - [ ] add header that says Homer Pfeiffer
+ * - [x] add header that says Homer Pfeiffer
  * - [x] deploy to github pages
  * - [ ] purchase homerpfeiffer.com
  * - [ ] add spinner while loading spreadsheet data?
@@ -10,10 +10,11 @@
 
 
 import lozad from 'lozad';
-import Tobii from '@midzer/tobii';
+import Tobii from '@midzer/tobii'; // https://github.com/midzer/tobii
 
 import './style.css'
 import { getSheetData } from './getSheetData.ts'
+// import './header.ts'
 
 let start: number;
 let end: number;

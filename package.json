@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/headroom.js": "^0.12.2",
     "@types/lozad": "^1.16.1",
     "@types/papaparse": "^5.3.7",
     "typescript": "^5.0.2",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "@midzer/tobii": "^2.5.0",
+    "headroom.js": "^0.12.0",
     "lozad": "^1.16.0",
     "papaparse": "^5.4.1"
   }

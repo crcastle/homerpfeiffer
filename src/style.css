@@ -10,6 +10,27 @@
     margin: 0
 }
 
+header {
+    font-family: 'Baskerville';
+    font-size: 48px;
+    margin: 80px 50px 80px 50px;
+    color: #214164;
+    border-bottom: 1px solid #333
+}
+
+/* .headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+    transform: translateY(0%);
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%);
+} */
+
 /* masonry grid styles */
 .grid {
     display: grid;
@@ -31,6 +52,7 @@ a {
 /* prettifying styles */
 html {
     background: #b3a69388;
+    scroll-padding-top: 55px;
 }
 
 img {
