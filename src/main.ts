@@ -72,5 +72,11 @@ getSheetData(sheetUrl, (results: any) => {
     observer.observe();
   }
 
+  const spinner: HTMLElement | null = document.querySelector('.loadingio-spinner-fluid-2mshlzrmjpk');
+  if (spinner) {
+    spinner.style.visibility = 'hidden';
+    spinner.style.display = 'none';
+  }
+
   initLightbox();
 });
