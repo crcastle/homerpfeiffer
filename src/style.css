@@ -1,9 +1,4 @@
-@import '/node_modules/@midzer/tobii/dist/tobii.min.css';
-
-:root {
-    --tobii-transition-duration: 1s;
-    --tobii-slide-max-height: calc(100vh - 5.125em)
-}
+@import '/node_modules/glightbox/dist/css/glightbox.min.css';
 
 /* basic reset */
 * {

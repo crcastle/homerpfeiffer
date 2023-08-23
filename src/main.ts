@@ -4,16 +4,18 @@
  * - [x] click to view large version
  * - [x] add header that says Homer Pfeiffer
  * - [x] deploy to github pages
+ * - [x] try out other lightbox library - https://dimboxjs.com
+ * - [x] create fragment # link for each zoomed in image
  * - [ ] purchase homerpfeiffer.com
  * - [ ] add spinner while loading spreadsheet data?
  */
 
 
 import lozad from 'lozad';
-import Tobii from '@midzer/tobii'; // https://github.com/midzer/tobii
 
-import './style.css'
-import { getSheetData } from './getSheetData.ts'
+import './style.css';
+import { getSheetData } from './getSheetData.ts';
+import { addToLightbox, initLightbox } from './lightbox.ts';
 // import './header.ts'
 
 let start: number;
@@ -31,6 +33,7 @@ getSheetData(sheetUrl, (results: any) => {
 
   const section = document.querySelector<HTMLElement>('#app')?.appendChild(document.createElement('section'));
   section?.classList.add('grid');
+  section!.id = 'grid'
 
   const observer = lozad('.item');
   observer.observe();
@@ -43,30 +46,26 @@ getSheetData(sheetUrl, (results: any) => {
       fileId = fileUrl.searchParams.get('id');
       imgSrc = `https://res.cloudinary.com/dhak0xfzi/image/upload/t_w620/siggie/${fileId}`
     } catch (e) {
-      console.info(e);
+      console.info('Invalid fileId', fileId, e);
+      continue;
     }
 
     const img = document.createElement('img');
     img.setAttribute('data-src', imgSrc!);
     img.setAttribute('width', '320px');
-    img.setAttribute('data-placeholder-background', '#ccc');
     img.classList.add('item');
 
     const a = document.createElement('a');
-    a.classList.add('lightbox');
+    addToLightbox(a);
     a.setAttribute('href', `https://res.cloudinary.com/dhak0xfzi/image/upload/siggie/${fileId}`);
+    a.id = fileId as string;
+    a.setAttribute('data-type', 'image');
     a.appendChild(img);
 
     section?.appendChild(a);
 
-
     observer.observe();
   }
 
-  //@ts-ignore
-  const tobii = new Tobii({
-    zoom: false,
-    counter: false,
-    close: false
-  });
+  initLightbox();
 });
