@@ -51,7 +51,7 @@ getSheetData(sheetUrl, (results: any) => {
         continue
       }
     } catch (e) {
-      console.info('Invalid fileId', fileId, e);
+      console.info('Invalid fileId value:', fileId, e);
       continue;
     }
 
