@@ -61,11 +61,11 @@ getSheetData(sheetUrl, (results: any) => {
     img.classList.add('item');
 
     const a = document.createElement('a');
-    addToLightbox(a);
     a.setAttribute('href', `https://res.cloudinary.com/dhak0xfzi/image/upload/siggie/${fileId}`);
-    a.id = fileId as string;
+    a.setAttribute('id', fileId);
     a.setAttribute('data-type', 'image');
     a.appendChild(img);
+    addToLightbox(a);
 
     section?.appendChild(a);
 
