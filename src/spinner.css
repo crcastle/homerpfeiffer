@@ -11,7 +11,7 @@
 .loadingio-spinner-fluid-2mshlzrmjpk {
     position: absolute;
     left: 50%;
-    top: 40vh;
+    top: max(40vh, 175px);
     transform: translate(-50%, 0);
     z-index: 9999;
     border-radius: 5px;
