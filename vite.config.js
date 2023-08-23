@@ -9,6 +9,6 @@ export default defineConfig(({ command, mode }) => {
         define: {
             spreadsheetUrl: JSON.stringify(env.SPREADSHEET_URL),
         },
-        base: '/homerpfeiffer/'
+        base: '/'
     }
 });
