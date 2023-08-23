@@ -1,12 +1,12 @@
 /**
  * TODO:
- * - [ ] skip spreadsheet rows without a URL
+ * - [x] skip spreadsheet rows without a URL
  * - [x] click to view large version
  * - [x] add header that says Homer Pfeiffer
  * - [x] deploy to github pages
  * - [x] try out other lightbox library - https://dimboxjs.com
  * - [x] create fragment # link for each zoomed in image
- * - [ ] purchase homerpfeiffer.com
+ * - [x] purchase homerpfeiffer.com
  * - [ ] add spinner while loading spreadsheet data?
  */
 
@@ -44,7 +44,12 @@ getSheetData(sheetUrl, (results: any) => {
     try {
       const fileUrl = new URL(row['Download link']);
       fileId = fileUrl.searchParams.get('id');
-      imgSrc = `https://res.cloudinary.com/dhak0xfzi/image/upload/t_w620/siggie/${fileId}`
+
+      if (fileId) {
+        imgSrc = `https://res.cloudinary.com/dhak0xfzi/image/upload/t_w620/siggie/${fileId}`
+      } else {
+        continue
+      }
     } catch (e) {
       console.info('Invalid fileId', fileId, e);
       continue;
