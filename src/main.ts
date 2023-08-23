@@ -7,7 +7,7 @@
  * - [x] try out other lightbox library - https://dimboxjs.com
  * - [x] create fragment # link for each zoomed in image
  * - [x] purchase homerpfeiffer.com
- * - [ ] add spinner while loading spreadsheet data?
+ * - [x] add spinner while loading spreadsheet data?
  */
 
 
@@ -58,12 +58,14 @@ getSheetData(sheetUrl, (results: any) => {
     const img = document.createElement('img');
     img.setAttribute('data-src', imgSrc!);
     img.setAttribute('width', '320px');
+    img.setAttribute('alt', 'A photograph of artwork by Homer Pfeiffer');
     img.classList.add('item');
 
     const a = document.createElement('a');
     a.setAttribute('href', `https://res.cloudinary.com/dhak0xfzi/image/upload/siggie/${fileId}`);
     a.setAttribute('id', fileId);
     a.setAttribute('data-type', 'image');
+    a.setAttribute('aria-label', 'View a larger version of this artwork');
     a.appendChild(img);
     addToLightbox(a);
 
