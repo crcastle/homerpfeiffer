@@ -46,7 +46,10 @@ getSheetData(sheetUrl, (results: any) => {
       fileId = fileUrl.searchParams.get('id');
 
       if (fileId) {
-        imgSrc = `https://res.cloudinary.com/dhak0xfzi/image/upload/t_w620/siggie/${fileId}`
+        // c_limit,w_420 limits the width to 420px while maintaining aspect ratio. keeping this slightly larger than the 320px size displayed seemed to be best.
+        // q_90 is quality 90%
+        // f_auto allows cloudinary to automatically choose file type
+        imgSrc = `https://res.cloudinary.com/dhak0xfzi/image/upload/c_limit,w_420/q_90/f_auto/siggie/${fileId}`
       } else {
         continue
       }
