@@ -11,7 +11,8 @@ header {
     font-size: 48px;
     margin: 80px 50px 80px 50px;
     color: #214164;
-    border-bottom: 1px solid #333
+    border-bottom: 2px solid #b3a69355;
+    border-bottom-style: groove;
 }
 
 /* .headroom {
