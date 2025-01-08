@@ -13,9 +13,12 @@
     <span>Homer Pfeiffer</span>
   </header>
   <div class="copyright">
-    ©️ Copyright 2023 Homer Pfeiffer, Dorrit Castle, Andrew McNay, Stuart McNay<br />
+    © Copyright <span id="year"></span> Homer Pfeiffer, Dorrit Castle, Andrew McNay, Stuart McNay<br />
     No image may be reproduced or used in any manner without written permission of the copyright owner.
   </div>
+  <script type="application/javascript">
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
 
   <div class="loadingio-spinner-fluid-2mshlzrmjpk">
     <div class="ldio-6v2it97gjpl">
